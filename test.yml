@@ -3,4 +3,4 @@
   gather_facts: no
   tasks:     
       - name: Create file
-        file: path=/tmp/yallo2 state=touch     
+        file: path=/tmp/testansible state=touch     

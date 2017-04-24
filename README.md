@@ -1,2 +1,2 @@
 # selftest_ansible
-selftest
+Modulo per testare il funzionamento di Ansible
