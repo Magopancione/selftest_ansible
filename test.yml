@@ -6,3 +6,12 @@
         file: path=/tmp/testansible state=touch  
       - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
       - debug: var=hostvars[inventory_hostname]['ansible_default_ipv6']['address']
+      
+      
+- hosts: all
+  vars:
+    - allips: |
+                    {% set comma = joiner(",") %}
+                    {% for host in groups['mygroup'] -%}
+                      {{ comma() }}{{ hostvars[host]['ansible_eth0']['ipv4']['address']}}
+                    {%- endfor -%}      
