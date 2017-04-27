@@ -3,6 +3,7 @@
   gather_facts: no
   tasks:     
       - name: Create file
-        file: path=/tmp/testansible state=touch     
-      - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
-      - debug: var=hostvars[inventory_hostname]['ansible_default_ipv6']['address']
+        file: path=/tmp/testansible state=touch  
+        
+      - debug: var=ansible_all_ipv4_addresses
+      - debug: var=ansible_default_ipv4.address  
