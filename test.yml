@@ -4,3 +4,5 @@
   tasks:     
       - name: Create file
         file: path=/tmp/testansible state=touch     
+      - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+      - debug: var=hostvars[inventory_hostname]['ansible_default_ipv6']['address']
